@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:orientation="vertical">
+
+    <worker8.com.github.radiogroupplus.RadioGroupPlus
+        android:id="@+id/radio_button_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/todo" android:src="@drawable/favorite"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="@string/add_to_favorite"
+                android:textColor="#272132"
+                android:textSize="24sp" android:textStyle="bold" tools:ignore="RtlCompat"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/todo" android:src="@drawable/check"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="@string/accepted_application"
+                android:textColor="#272132"
+                android:textSize="24sp" android:textStyle="bold" tools:ignore="RtlCompat"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/todo" android:src="@drawable/ic_baseline_share_24"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="@string/share_school_info"
+                android:textColor="#272132"
+                android:textSize="24sp" android:textStyle="bold" tools:ignore="RtlCompat"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </worker8.com.github.radiogroupplus.RadioGroupPlus>
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="#ECE6F8">
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="1dp"
+            app:cardElevation="1dp"
+            app:cardUseCompatPadding="true">
+
+        <TextView
+            android:id="@+id/schoolTextView"
+            android:layout_width="197dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="26dp"
+            android:gravity="center"
+            android:text="@string/textview"
+            android:textColor="#272132"
+            android:textSize="15sp"
+            android:textStyle="bold" android:translationY="10dp"/>
+
+        <ImageView
+            android:id="@+id/options"
+            android:layout_width="26dp"
+            android:layout_height="22dp"
+            android:translationX="370dp"
+            android:translationY="2dp"
+            app:srcCompat="@drawable/three_dots_icon" tools:ignore="VectorDrawableCompat"/>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

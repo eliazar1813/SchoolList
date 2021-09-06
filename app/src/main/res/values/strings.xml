@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SchoolList</string>
+    <string name="title_home">Home</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_accepted">Accepted</string>
+    <string name="accepted_application">add to accepted List</string>
+    <string name="todo">TODO</string>
+    <string name="share_school_info">Share School info</string>
+    <string name="add_to_favorite">Add to favorite</string>
+    <string name="textview">School Name</string>
+</resources>
