@@ -12,14 +12,20 @@
             tools:layout="@layout/home_dashboard"/>
 
     <fragment
-            android:id="@+id/navigation_dashboard"
+            android:id="@+id/navigation_favorite"
             android:name="com.example.schoollist.fragments.favorite.FavoriteFragment"
             android:label="@string/title_favorite"
             tools:layout="@layout/favorite_dashboard"/>
 
     <fragment
-            android:id="@+id/navigation_notifications"
+            android:id="@+id/navigation_accepted"
             android:name="com.example.schoollist.fragments.accepted.AcceptedFragment"
             android:label="@string/title_accepted"
             tools:layout="@layout/accepted_dashboard"/>
+
+    <fragment
+        android:id="@+id/navigation_schoolDetails"
+        android:name="com.example.schoollist.fragments.details.DetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/school_details_layout"/>
 </navigation>

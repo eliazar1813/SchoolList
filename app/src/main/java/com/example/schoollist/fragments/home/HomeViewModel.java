@@ -10,7 +10,7 @@ import com.example.schoollist.repository.DataManager;
 import java.util.HashMap;
 import java.util.List;
 
-public class BaseViewModel extends ViewModel {
+public class HomeViewModel extends ViewModel {
 
     private MutableLiveData<List<SchoolModel>> schoolList;
 

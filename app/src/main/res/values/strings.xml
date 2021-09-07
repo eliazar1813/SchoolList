@@ -8,4 +8,16 @@
     <string name="share_school_info">Share School info</string>
     <string name="add_to_favorite">Add to favorite</string>
     <string name="textview">School Name</string>
+    <string name="school_title">School Name</string>
+    <string name="location">Location</string>
+    <string name="_125">125</string>
+    <string name="_1205">1205</string>
+    <string name="_360">360</string>
+    <string name="math">Math</string>
+    <string name="read">Read</string>
+    <string name="write">Write</string>
+    <string name="school_gmail_com">school@gmail.com</string>
+    <string name="_266_225_225">+266 225 225</string>
+    <string name="web_site">Web site</string>
+    <string name="borough">Borough</string>
 </resources>

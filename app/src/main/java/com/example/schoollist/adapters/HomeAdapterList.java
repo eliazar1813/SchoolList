@@ -18,7 +18,7 @@ public class HomeAdapterList extends RecyclerAdapter implements Filterable {
     public Filter getFilter() {
         return filterList;
     }
-    private Filter filterList = new Filter() {
+    private final Filter filterList = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
 

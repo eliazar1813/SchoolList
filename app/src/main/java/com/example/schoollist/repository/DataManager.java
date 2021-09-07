@@ -1,7 +1,6 @@
 package com.example.schoollist.repository;
 
 import android.util.Log;
-import android.widget.ProgressBar;
 import androidx.lifecycle.MutableLiveData;
 import com.example.schoollist.models.SatScoreModel;
 import com.example.schoollist.models.SchoolModel;
@@ -17,7 +16,6 @@ import java.util.List;
 public class DataManager {
 
     public static final String TAG = "DataManager Class";
-    private ProgressBar progressBar;
 
     MutableLiveData<List<SchoolModel>> schoolList;
     MutableLiveData<HashMap<String, SatScoreModel>> satScoreTable;

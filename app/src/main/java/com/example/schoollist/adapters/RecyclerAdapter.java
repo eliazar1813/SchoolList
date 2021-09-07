@@ -8,9 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.schoollist.R;
+import com.example.schoollist.fragments.accepted.AcceptedViewModel;
+import com.example.schoollist.fragments.details.DetailsFragment;
+import com.example.schoollist.fragments.details.DetailsViewModel;
+import com.example.schoollist.fragments.favorite.FavoriteViewModel;
 import com.example.schoollist.models.SchoolModel;
 import worker8.com.github.radiogroupplus.RadioGroupPlus;
 
@@ -55,6 +62,7 @@ public abstract class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapt
             super(itemView);
             schoolName = itemView.findViewById(R.id.schoolTextView);
             moreOptions = itemView.findViewById(R.id.options);
+            radioGroup = itemView.findViewById(R.id.radio_button_list);
         }
 
         public void show(SchoolModel currentSchool) {
@@ -71,27 +79,28 @@ public abstract class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapt
                     dialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
+                            // Do nothing
                         }
                     }).setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            int choiceOption = radioGroup.getCheckedRadioButtonId();
-                            switch (choiceOption){
-                                case R.id.radio_button_favorite:
-//                                  Add Current School to Favorite viewModel List
-
-                                case R.id.radio_button_accept:
-
-                                case R.id.radio_button_share:
-
-                                default:
-                                    //Do nothing
-                            }
+                            selectOption(radioGroup.getCheckedRadioButtonId(), currentSchool);
                         }
                     });
 
                     dialogBuilder.create().show();
+                }
+            });
+
+
+            schoolName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DetailsViewModel detailsViewModel = DetailsViewModel.getInstance();
+                    detailsViewModel.init(currentSchool);
+                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                    activity.getSupportFragmentManager().beginTransaction().replace(android.R.id.content, new DetailsFragment()).addToBackStack(null).commit();
+
                 }
             });
         }
@@ -105,6 +114,35 @@ public abstract class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapt
             dialogBuilder.setView(view);
 
             return dialogBuilder;
+        }
+
+        public void selectOption(int selected, SchoolModel currentSchool){
+            switch (selected){
+                case R.id.radio_button_favorite:
+//                  Add Current School to Favorite viewModel List
+                    FavoriteViewModel favoriteViewModel = FavoriteViewModel.getInstance();
+                    favoriteViewModel.init();
+
+                    if(favoriteViewModel.addToList(currentSchool)){
+                        Toast.makeText(context,"School added to favorite list", Toast.LENGTH_LONG).show();
+                    }else{
+                        Toast.makeText(context,"School already on favorite list", Toast.LENGTH_LONG).show();
+                    }
+                    break;
+                case R.id.radio_button_accept:
+                    AcceptedViewModel acceptedViewModel = AcceptedViewModel.getInstance();
+                    acceptedViewModel.init();
+
+                    if(acceptedViewModel.addToList(currentSchool)){
+                        Toast.makeText(context,"School added to accepted list", Toast.LENGTH_LONG).show();
+                    }else{
+                        Toast.makeText(context,"School already on accepted list", Toast.LENGTH_LONG).show();
+                    }
+                    break;
+                case R.id.radio_button_share:
+                    Toast.makeText(context,"Hello", Toast.LENGTH_LONG).show();
+                    break;
+            }
         }
     }
 }

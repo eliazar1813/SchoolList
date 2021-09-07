@@ -7,7 +7,6 @@ import android.widget.ProgressBar;
 import android.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.schoollist.R;
 import com.example.schoollist.adapters.HomeAdapterList;
@@ -23,7 +22,7 @@ public class HomeFragment extends Fragment {
     View view;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        BaseViewModel homeViewModel = ViewModelProviders.of(this).get(BaseViewModel.class);
+        HomeViewModel homeViewModel = new HomeViewModel();
         view = inflater.inflate(R.layout.home_dashboard, container, false);
 
         progressBar = view.findViewById(R.id.progressBar);
